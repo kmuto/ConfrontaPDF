@@ -40,11 +40,13 @@ TRANSLATIONS += confrontapdf_cz.ts
 TRANSLATIONS += confrontapdf_fr.ts
 TRANSLATIONS += confrontapdf_de.ts
 TRANSLATIONS += confrontapdf_es.ts
+TRANSLATIONS += confrontapdf_ja.ts
 CODECFORTR    = UTF-8
 
 greaterThan(QT_MAJOR_VERSION, 4) {
     QT       += printsupport widgets core
     LIBS	     += -lpoppler-qt5
+    LIBS	     += -L/usr/local/lib
     DEFINES += USE_QT5
     exists($(HOME)/opt/poppler024/) {
         message(Using locally built Poppler library)
@@ -153,7 +155,7 @@ win32:RC_FILE = win.rc
 #}
 
 
-QMAKE_CXXFLAGS +=-Werror
+#QMAKE_CXXFLAGS +=-Werror
 QMAKE_CXXFLAGS +=-Wall
 
 
